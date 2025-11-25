@@ -5,6 +5,7 @@
 # Install shadcn
 - npx shadcn@latest init
 - npx shadcn@latest add button
+- npx shadcn@latest add sheet
 
 # libraries
 - npm install lucide-react
