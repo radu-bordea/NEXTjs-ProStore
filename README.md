@@ -5,7 +5,8 @@
 - npx shadcn@latest init
 - npx shadcn@latest add button
 - npx shadcn@latest add sheet
-- npx shadcn@latest dropdown-menu
+- npx shadcn@latest add dropdown-menu
+- npx shadcn@latest add card
 
 # libraries
 - npm install lucide-react
