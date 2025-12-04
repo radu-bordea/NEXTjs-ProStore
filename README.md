@@ -11,6 +11,7 @@
 # libraries
 - npm install lucide-react
 - npm install next-themes
+- npm i zod
 
 ### PRISMA SETUP ###
 - npm install prisma tsx @types/pg --save-dev
