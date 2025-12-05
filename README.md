@@ -7,11 +7,17 @@
 - npx shadcn@latest add sheet
 - npx shadcn@latest add dropdown-menu
 - npx shadcn@latest add card
+- npx shadcn@latest add badge
 
 # libraries
 - npm install lucide-react
 - npm install next-themes
 - npm i zod
+
+# neon
+- npm i @neondatabase/serverless @prisma/adapter-neon ws
+- npm i -D @types/ws bufferutil
+
 
 ### PRISMA SETUP ###
 - npm install prisma tsx @types/pg --save-dev
