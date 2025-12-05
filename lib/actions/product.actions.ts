@@ -5,17 +5,33 @@ import { LATESTS_PRODUCTS_LIMIT } from "../constants";
 
 // Get latest products
 export async function getLatestProducts() {
-  const data = await prisma.product.findMany({
+  const products = await prisma.product.findMany({
     take: LATESTS_PRODUCTS_LIMIT,
     orderBy: { createdAt: "desc" },
   });
 
-  return convertToPlainObject(data);
+  const serialized = products.map((p) => ({
+    ...p,
+    price: p.price.toNumber(),       // 🔥 Convert Decimal → number
+    rating: p.rating.toNumber(),     // 🔥 Convert Decimal → number
+  }));
+
+  return convertToPlainObject(serialized);
 }
+
 
 // Get single product by its slug
 export async function getProductBySlug(slug: string) {
-  return await prisma.product.findFirst({
-    where: { slug: slug },
+  const p = await prisma.product.findFirst({
+    where: { slug },
   });
+
+  if (!p) return null;
+
+  return {
+    ...p,
+    price: p.price.toNumber(),
+    rating: p.rating.toNumber(),
+  };
 }
+
